@@ -5,6 +5,7 @@ from src.build_features import build_features
 from src.database import SessionLocal
 from src.history import save_record, get_paginated_predictions, get_last_records
 from sqlalchemy.orm import Session
+from fastapi.middleware.cors import CORSMiddleware
 
 
 def get_db():
@@ -17,6 +18,16 @@ def get_db():
 
 app = FastAPI()
 model = joblib.load("aqi_model.pkl")
+
+
+# Allow all origins (development mode)
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # allow all domains
+    allow_credentials=True,
+    allow_methods=["*"],  # allow all HTTP methods
+    allow_headers=["*"],  # allow all headers
+)
 
 
 class UserInput(BaseModel):
