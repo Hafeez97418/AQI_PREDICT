@@ -13,7 +13,7 @@ def get_last_records(db: Session, city, limit=14):
     return (
         db.query(AQIHistory)
         .filter(AQIHistory.city == city)
-        .order_by(AQIHistory.date.desc())
+        .order_by(AQIHistory.id.desc())
         .limit(limit)
         .all()
     )
@@ -28,7 +28,7 @@ def get_paginated_predictions(db: Session, page: int, limit: int):
     # paginated query
     rows = (
         db.query(AQIHistory)
-        .order_by(AQIHistory.date.desc())
+        .order_by(AQIHistory.id.desc())
         .offset(offset)
         .limit(limit)
         .all()

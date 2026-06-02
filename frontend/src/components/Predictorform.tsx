@@ -62,7 +62,7 @@ const PredictorForm: React.FC<PredictorFormProps> = ({ onResult }) => {
           <input
             type="text"
             value={city}
-            onChange={(e) => setCity(e.target.value)}
+            onChange={(e) => setCity(e.currentTarget.value)}
             placeholder="e.g. Bangalore"
             required
             className="w-full rounded-lg border border-slate-700 bg-slate-800 px-4 py-3 text-sm text-slate-100 placeholder-slate-500 outline-none transition-all duration-200 focus:border-teal-500 focus:ring-1 focus:ring-teal-500"
@@ -76,7 +76,7 @@ const PredictorForm: React.FC<PredictorFormProps> = ({ onResult }) => {
           <input
             type="number"
             value={currentAqi}
-            onChange={(e) => setCurrentAqi(e.target.value)}
+            onChange={(e) => setCurrentAqi(e.currentTarget.value)}
             placeholder="e.g. 82"
             min={0}
             max={500}

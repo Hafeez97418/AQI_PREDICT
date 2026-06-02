@@ -82,7 +82,7 @@ const CityChart: React.FC = () => {
         <input
           type="text"
           value={cityInput}
-          onChange={(e) => setCityInput(e.target.value)}
+          onChange={(e) => setCityInput(e.currentTarget.value)}
           placeholder="Enter city name…"
           className="flex-1 rounded-lg border border-slate-700 bg-slate-800 px-4 py-2.5 text-sm text-slate-100 placeholder-slate-500 outline-none transition-all focus:border-teal-500 focus:ring-1 focus:ring-teal-500"
         />
